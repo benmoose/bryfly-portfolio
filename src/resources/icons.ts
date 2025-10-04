@@ -1,5 +1,4 @@
 import { IconType } from "react-icons";
-
 import {
   HiArrowUpRight,
   HiOutlineLink,
@@ -13,27 +12,30 @@ import {
   HiOutlineGlobeAsiaAustralia,
   HiOutlineRocketLaunch,
 } from "react-icons/hi2";
-
 import {
+  PiDiscoBall,
   PiHouseDuotone,
   PiUserCircleDuotone,
   PiGridFourDuotone,
   PiBookBookmarkDuotone,
   PiImageDuotone,
 } from "react-icons/pi";
-
 import {
   SiJavascript,
   SiNextdotjs,
   SiFigma,
   SiSupabase,
 } from "react-icons/si";
-
-import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, } from "react-icons/fa6";
+import { FaDiaspora, FaDiceD6, FaPalette, FaMarker, FaGithub, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaInstagram } from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
   arrowRight: HiArrowRight,
+  diaspora: FaDiaspora,
+  marker: FaMarker,
+  discoBall: PiDiscoBall,
+  diceD6: FaDiceD6,
+  palette: FaPalette,
   email: HiEnvelope,
   globe: HiOutlineGlobeAsiaAustralia,
   person: PiUserCircleDuotone,
@@ -43,14 +45,10 @@ export const iconLibrary: Record<string, IconType> = {
   calendar: HiCalendarDays,
   home: PiHouseDuotone,
   gallery: PiImageDuotone,
-  discord: FaDiscord,
   eye: HiOutlineEye,
   eyeOff: HiOutlineEyeSlash,
   github: FaGithub,
-  linkedin: FaLinkedin,
-  x: FaX,
-  twitter: FaXTwitter,
-  threads: FaThreads,
+  instagram: FaInstagram,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
   document: HiOutlineDocument,
   rocket: HiOutlineRocketLaunch,

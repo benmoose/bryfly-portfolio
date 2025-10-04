@@ -13,14 +13,12 @@ import {
 } from "@/types";
 import { home } from "./index";
 
-// IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL: string = "https://demo.magic-portfolio.com";
+const baseURL: string = "https://bryfly-portfolio.vercel.com";
 
 const routes: RoutesConfig = {
   "/": true,
-  "/about": true,
-  "/work": true,
-  "/blog": true,
+  "/hire": true,
+  "/commission": true,
   "/gallery": true,
 };
 
@@ -188,9 +186,9 @@ const mailchimp: MailchimpConfig = {
 const schema: SchemaConfig = {
   logo: "",
   type: "Organization",
-  name: "Once UI",
+  name: "BryFly",
   description: home.description,
-  email: "lorant@once-ui.com",
+  email: "bryony@bryfly.com",
 };
 
 // social links
@@ -204,8 +202,9 @@ const sameAs: SameAsConfig = {
 const socialSharing: SocialSharingConfig = {
   display: true,
   platforms: {
-    x: true,
-    linkedin: true,
+    x: false,
+    instagram: true,
+    linkedin: false,
     facebook: false,
     pinterest: false,
     whatsapp: false,

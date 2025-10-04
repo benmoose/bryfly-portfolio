@@ -1,10 +1,9 @@
-# Magic Portfolio
+# BryFly Portfolio
 
-Magic Portfolio is a simple, clean, beginner-friendly portfolio template. It supports an MDX-based content system for projects and blog posts, an about / CV page and a gallery.
+This site is forked from Once UI's [Magic Portfolio](https://github.com/once-ui-system/magic-portfolio) template.
+It supports an MDX-based content system for projects and blog posts, an about / CV page and a gallery.
 
-View the demo [here](https://demo.magic-portfolio.com).
-
-![Magic Portfolio](public/images/og/home.jpg)
+![BryFly Portfolio](public/images/og/home.jpg)
 
 ## Getting started
 
@@ -71,11 +70,6 @@ Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfo
 ## Creators
 
 Lorant One: [Threads](https://www.threads.net/@lorant.one) / [LinkedIn](https://www.linkedin.com/in/lorant-one/)
-
-## Get involved
-
-- Join the Design Engineers Club on [Discord](https://discord.com/invite/5EyAQ4eNdS) and share your project with us!
-- Deployed your docs? Share it on the [Once UI Hub](https://once-ui.com/hub) too! We feature our favorite apps on our landing page.
 
 ## License
 
