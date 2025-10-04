@@ -1,4 +1,4 @@
-import { IconType } from "react-icons";
+import { IconType } from 'react-icons'
 import {
   HiArrowUpRight,
   HiOutlineLink,
@@ -10,23 +10,23 @@ import {
   HiOutlineEyeSlash,
   HiOutlineDocument,
   HiOutlineGlobeAsiaAustralia,
-  HiOutlineRocketLaunch,
-} from "react-icons/hi2";
+  HiOutlineRocketLaunch
+} from 'react-icons/hi2'
 import {
   PiDiscoBall,
   PiHouseDuotone,
   PiUserCircleDuotone,
   PiGridFourDuotone,
   PiBookBookmarkDuotone,
-  PiImageDuotone,
-} from "react-icons/pi";
+  PiImageDuotone
+} from 'react-icons/pi'
 import {
   SiJavascript,
   SiNextdotjs,
   SiFigma,
-  SiSupabase,
-} from "react-icons/si";
-import { FaDiaspora, FaDiceD6, FaPalette, FaMarker, FaGithub, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaInstagram } from "react-icons/fa6";
+  SiSupabase
+} from 'react-icons/si'
+import { FaDiaspora, FaDiceD6, FaPalette, FaMarker, FaGithub, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaInstagram } from 'react-icons/fa6'
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -60,8 +60,8 @@ export const iconLibrary: Record<string, IconType> = {
   pinterest: FaPinterest,
   whatsapp: FaWhatsapp,
   reddit: FaReddit,
-  telegram: FaTelegram,
-};
+  telegram: FaTelegram
+}
 
-export type IconLibrary = typeof iconLibrary;
-export type IconName = keyof IconLibrary;
+export type IconLibrary = typeof iconLibrary
+export type IconName = keyof IconLibrary

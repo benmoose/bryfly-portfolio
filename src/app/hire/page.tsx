@@ -1,49 +1,31 @@
-import {
-  Avatar,
-  Button,
-  Column,
-  Heading,
-  Icon,
-  IconButton,
-  Media,
-  Tag,
-  Text,
-  Meta,
-  Schema,
-  Row,
-} from "@once-ui-system/core";
-import { baseURL, hire, person, social } from "@/resources";
-import TableOfContents from "@/components/about/TableOfContents";
-import styles from "@/components/about/about.module.scss";
-import React from "react";
+import {Column, Heading, Meta, Schema} from '@once-ui-system/core'
+import {about, baseURL, commission, home} from '@/resources'
+import {Projects} from '@/components/work/Projects'
 
 export async function generateMetadata() {
-  return Meta.generate({
-    title: hire.title,
-    description: hire.description,
-    baseURL: baseURL,
-    image: `/api/og/generate?title=${encodeURIComponent(hire.title)}`,
-    path: hire.path,
-  });
+    return Meta.generate({
+        baseURL,
+        title: about.title,
+        description: about.description,
+        image: `/api/og/generate?title=${encodeURIComponent(about.title)}`,
+        path: about.path
+    })
 }
 
-export default function Hire() {
-  return (
-    <Column maxWidth="m">
-      <Schema
-        as="webPage"
-        baseURL={baseURL}
-        title={hire.title}
-        description={hire.description}
-        path={hire.path}
-        image={`/api/og/generate?title=${encodeURIComponent(hire.title)}`}
-        author={{
-          name: person.name,
-          url: `${baseURL}${hire.path}`,
-          image: `${baseURL}${person.avatar}`,
-        }}
-      />
-      Hire page
-    </Column>
-  );
+export default function Commission() {
+    return (
+        <Column maxWidth='m' paddingTop='24'>
+            <Schema
+                as='webPage'
+                baseURL={baseURL}
+                path={commission.path}
+                title={commission.title}
+                description={commission.description}
+            />
+            <Heading marginBottom='l' variant='heading-strong-xl' align='center'>
+                Hire Page
+            </Heading>
+            <Projects/>
+        </Column>
+    )
 }

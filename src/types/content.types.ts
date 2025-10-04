@@ -1,83 +1,84 @@
-import { IconName } from "@/resources/icons";
-import { zones } from "tzdata";
+import type { ReactNode } from 'react'
+import { IconName } from '@/resources/icons'
+import { zones } from 'tzdata'
 
 /**
  * IANA time zone string (e.g., 'Asia/Calcutta', 'Europe/Vienna').
  * See: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
  */
-export type IANATimeZone = Extract<keyof typeof zones, string>; // Narrow to string keys for React usage
+export type IANATimeZone = Extract<keyof typeof zones, string> // Narrow to string keys for React usage
 
 /**
  * Represents a person featured in the portfolio.
  */
-export type Person = {
+export interface Person {
   /** First name of the person */
-  firstName: string;
+  firstName: string
   /** Last name of the person */
-  lastName: string;
+  lastName: string
   /** The name you want to display, allows variations like nicknames */
-  name: string;
+  name: string
   /** Role or job title */
-  role: string;
+  role: string
   /** Path to avatar image */
-  avatar: string;
+  avatar: string
   /** Email address */
-  email: string;
+  email: string
   /** IANA time zone location */
-  location: IANATimeZone;
+  ianaLocation: IANATimeZone
   /** Languages spoken */
-  languages?: string[];
-};
+  languages?: string[]
+}
 
 /**
  * Newsletter Section
  * @description The below information will be displayed on the Home page in Newsletter block
  */
-export type Newsletter = {
+export interface Newsletter {
   /** Whether to display the newsletter section */
-  display: boolean;
+  display: boolean
   /** Title of the newsletter   */
-  title: React.ReactNode;
+  title: ReactNode
   /** Description of the newsletter */
-  description: React.ReactNode;
-};
+  description: ReactNode
+}
 
 /**
  * Social link configuration.
  */
 export type Social = Array<{
   /** Name of the social platform */
-  name: string;
+  name: string
   /** Icon for the social platform
-   * The icons are a part of "src/resources/icons.ts" file.
-   * If you need a different icon, import it there and reference it everywhere else
-   */
-  icon: IconName;
+     * The icons are a part of "src/resources/icons.ts" file.
+     * If you need a different icon, import it there and reference it everywhere else
+     */
+  icon: IconName
   /**
-   * The link to the social platform
-   *
-   * The link is not validated by code, make sure it's correct
-   */
-  link: string;
-}>;
+     * The link to the social platform
+     *
+     * The link is not validated by code, make sure it's correct
+     */
+  link: string
+}>
 
 /**
  * Base interface for page configuration with common properties.
  */
 export interface BasePageConfig {
   /** Path to the page
-   *
-   * The path should be relative to the public directory
-   */
-  path: `/${string}` | string;
+     *
+     * The path should be relative to the public directory
+     */
+  path: `/${string}` | string
   /** Label for navigation or display */
-  label: string;
+  label: string
   /** Title of the page */
-  title: string;
+  title: string
   /** Description for SEO and metadata */
-  description: string;
+  description: string
   /** OG Image should be put inside `public/images` folder */
-  image?: `/images/${string}` | string;
+  image?: `/images/${string}` | string
 }
 
 /**
@@ -85,20 +86,20 @@ export interface BasePageConfig {
  */
 export interface Home extends BasePageConfig {
   /** The image to be displayed in metadata
-   *
-   * The image needs to be put inside `/public/images/` directory
-   */
-  image: `/images/${string}` | string;
+     *
+     * The image needs to be put inside `/public/images/` directory
+     */
+  image: `/images/${string}` | string
   /** The headline of the home page */
-  headline: React.ReactNode;
+  headline: ReactNode
   /** Featured badge, which appears above the headline */
   featured: {
-    display: boolean;
-    title: React.ReactNode;
-    href: string;
-  };
+    display: boolean
+    title: ReactNode
+    href: string
+  }
   /** The sub text which appears below the headline */
-  subline: React.ReactNode;
+  subline: ReactNode
 }
 
 /**
@@ -106,31 +107,26 @@ export interface Home extends BasePageConfig {
  * @description Configuration for the About page, including sections for table of contents, avatar, calendar, introduction, work experience, studies, and technical skills.
  */
 export interface About extends BasePageConfig {
-  /** Table of contents configuration */
-  tableOfContent: {
-    /** Whether to display the table of contents */
-    display: boolean;
-    /** Whether to show sub-items in the table of contents */
-    subItems: boolean;
-  };
   /** Avatar section configuration */
   avatar: {
     /** Whether to display the avatar */
-    display: boolean;
-  };
+    display: boolean
+  }
 }
 
 /**
  * Item Hire page configuration.
  * @description Configuration for the Work/Projects page, including metadata and navigation label.
  */
-export interface Hire extends BasePageConfig {}
+export interface Hire extends BasePageConfig {
+}
 
 /**
  * Commissions page configuration.
  * @description Configuration for the Work/Projects page, including metadata and navigation label.
  */
-export interface Commission extends BasePageConfig {}
+export interface Commission extends BasePageConfig {
+}
 
 /**
  * Gallery page configuration.
@@ -140,10 +136,10 @@ export interface Gallery extends BasePageConfig {
   /** List of images in the gallery */
   images: Array<{
     /** Image source path */
-    src: string;
+    src: string
     /** Image alt text */
-    alt: string;
+    alt: string
     /** Image orientation (horizontal/vertical) */
-    orientation: string;
-  }>;
+    orientation: string
+  }>
 }

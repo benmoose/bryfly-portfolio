@@ -9,100 +9,98 @@ import {
   SameAsConfig,
   SchemaConfig,
   SocialSharingConfig,
-  StyleConfig,
-} from "@/types";
-import { home } from "./index";
+  StyleConfig
+} from '@/types'
+import { home } from './index'
 
-const baseURL: string = "https://bryfly-portfolio.vercel.com";
+// Import and set font for each variant
+import { Geist } from 'next/font/google'
+import { Geist_Mono } from 'next/font/google'
+
+const baseURL: string = 'https://bryfly-portfolio.vercel.com'
 
 const routes: RoutesConfig = {
-  "/": true,
-  "/hire": true,
-  "/commission": true,
-  "/gallery": true,
-};
+  '/': true,
+  '/hire': true,
+  '/commission': true,
+  '/gallery': true
+}
 
 const display: DisplayConfig = {
   location: true,
   time: true,
-  themeSwitcher: true,
-};
+  themeSwitcher: true
+}
 
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
-const protectedRoutes: ProtectedRoutesConfig = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
-};
-
-// Import and set font for each variant
-import { Geist } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
+const protectedRoutes: ProtectedRoutesConfig = {}
 
 const heading = Geist({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  display: "swap",
-});
+  variable: '--font-heading',
+  subsets: ['latin'],
+  display: 'swap'
+})
 
 const body = Geist({
-  variable: "--font-body",
-  subsets: ["latin"],
-  display: "swap",
-});
+  variable: '--font-body',
+  subsets: ['latin'],
+  display: 'swap'
+})
 
 const label = Geist({
-  variable: "--font-label",
-  subsets: ["latin"],
-  display: "swap",
-});
+  variable: '--font-label',
+  subsets: ['latin'],
+  display: 'swap'
+})
 
 const code = Geist_Mono({
-  variable: "--font-code",
-  subsets: ["latin"],
-  display: "swap",
-});
+  variable: '--font-code',
+  subsets: ['latin'],
+  display: 'swap'
+})
 
 const fonts: FontsConfig = {
-  heading: heading,
-  body: body,
-  label: label,
-  code: code,
-};
+  heading,
+  body,
+  label,
+  code
+}
 
 // default customization applied to the HTML in the main layout.tsx
 const style: StyleConfig = {
-  theme: "system", // dark | light | system
-  neutral: "gray", // sand | gray | slate | custom
-  brand: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  accent: "red", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  solid: "contrast", // color | contrast
-  solidStyle: "flat", // flat | plastic
-  border: "playful", // rounded | playful | conservative
-  surface: "translucent", // filled | translucent
-  transition: "all", // all | micro | macro
-  scaling: "100", // 90 | 95 | 100 | 105 | 110
-};
+  theme: 'system', // dark | light | system
+  neutral: 'gray', // sand | gray | slate | custom
+  brand: 'cyan', // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  accent: 'red', // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  solid: 'contrast', // color | contrast
+  solidStyle: 'flat', // flat | plastic
+  border: 'playful', // rounded | playful | conservative
+  surface: 'translucent', // filled | translucent
+  transition: 'all', // all | micro | macro
+  scaling: '100' // 90 | 95 | 100 | 105 | 110
+}
 
 const dataStyle: DataStyleConfig = {
-  variant: "gradient", // flat | gradient | outline
-  mode: "categorical", // categorical | divergent | sequential
+  variant: 'gradient', // flat | gradient | outline
+  mode: 'categorical', // categorical | divergent | sequential
   height: 24, // default chart height
   axis: {
-    stroke: "var(--neutral-alpha-weak)",
+    stroke: 'var(--neutral-alpha-weak)'
   },
   tick: {
-    fill: "var(--neutral-on-background-weak)",
+    fill: 'var(--neutral-on-background-weak)',
     fontSize: 11,
-    line: false,
-  },
-};
+    line: false
+  }
+}
 
 const effects: EffectsConfig = {
   mask: {
     cursor: false,
     x: 50,
     y: 0,
-    radius: 100,
+    radius: 100
   },
   gradient: {
     display: false,
@@ -112,40 +110,40 @@ const effects: EffectsConfig = {
     width: 100,
     height: 50,
     tilt: 0,
-    colorStart: "accent-background-strong",
-    colorEnd: "page-background",
+    colorStart: 'accent-background-strong',
+    colorEnd: 'page-background'
   },
   dots: {
     display: true,
     opacity: 40,
-    size: "2",
-    color: "brand-background-strong",
+    size: '2',
+    color: 'brand-background-strong'
   },
   grid: {
     display: false,
     opacity: 100,
-    color: "neutral-alpha-medium",
-    width: "0.25rem",
-    height: "0.25rem",
+    color: 'neutral-alpha-medium',
+    width: '0.25rem',
+    height: '0.25rem'
   },
   lines: {
     display: false,
     opacity: 100,
-    color: "neutral-alpha-weak",
-    size: "16",
+    color: 'neutral-alpha-weak',
+    size: '16',
     thickness: 1,
-    angle: 45,
-  },
-};
+    angle: 45
+  }
+}
 
 const mailchimp: MailchimpConfig = {
-  action: "https://url/subscribe/post?parameters",
+  action: 'https://url/subscribe/post?parameters',
   effects: {
     mask: {
       cursor: true,
       x: 50,
       y: 0,
-      radius: 100,
+      radius: 100
     },
     gradient: {
       display: true,
@@ -155,48 +153,41 @@ const mailchimp: MailchimpConfig = {
       width: 50,
       height: 50,
       tilt: 0,
-      colorStart: "accent-background-strong",
-      colorEnd: "static-transparent",
+      colorStart: 'accent-background-strong',
+      colorEnd: 'static-transparent'
     },
     dots: {
       display: true,
       opacity: 20,
-      size: "2",
-      color: "brand-on-background-weak",
+      size: '2',
+      color: 'brand-on-background-weak'
     },
     grid: {
       display: false,
       opacity: 100,
-      color: "neutral-alpha-medium",
-      width: "0.25rem",
-      height: "0.25rem",
+      color: 'neutral-alpha-medium',
+      width: '0.25rem',
+      height: '0.25rem'
     },
     lines: {
       display: false,
       opacity: 100,
-      color: "neutral-alpha-medium",
-      size: "16",
+      color: 'neutral-alpha-medium',
+      size: '16',
       thickness: 1,
-      angle: 90,
-    },
-  },
-};
+      angle: 90
+    }
+  }
+}
 
 // default schema data
 const schema: SchemaConfig = {
-  logo: "",
-  type: "Organization",
-  name: "BryFly",
+  logo: '',
+  type: 'Organization',
+  name: 'BryFly',
   description: home.description,
-  email: "bryony@bryfly.com",
-};
-
-// social links
-const sameAs: SameAsConfig = {
-  threads: "https://www.threads.com/@once_ui",
-  linkedin: "https://www.linkedin.com/company/once-ui/",
-  discord: "https://discord.com/invite/5EyAQ4eNdS",
-};
+  email: 'hi@bryfly.com'
+}
 
 // social sharing configuration for blog posts
 const socialSharing: SocialSharingConfig = {
@@ -211,9 +202,9 @@ const socialSharing: SocialSharingConfig = {
     reddit: false,
     telegram: false,
     email: true,
-    copyLink: true,
-  },
-};
+    copyLink: true
+  }
+}
 
 export {
   display,
@@ -224,8 +215,7 @@ export {
   fonts,
   style,
   schema,
-  sameAs,
   socialSharing,
   effects,
-  dataStyle,
-};
+  dataStyle
+}
